@@ -1,4 +1,12 @@
 #include "udpcomm.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <netinet/in.h>
 
 bool UDPComm::server_select = false;
 char UDPComm::ip[] = "192.168.1.2";
@@ -62,13 +70,11 @@ vector<unsigned char> UDPComm::Receive()
     unsigned char buffer[MAX_LINE];
     int n = 0;
     if (UDPComm::server_select) {
-        socklen_t len;
-        len = sizeof(client_addr);
+        socklen_t len = sizeof(client_addr);
         n = recvfrom(sock_fd, (char *)buffer, MAX_LINE, MSG_WAITALL,
                      (struct sockaddr *)&client_addr, &len);
     } else {
-        socklen_t len;
-        len = sizeof(server_addr);
+        socklen_t len = sizeof(server_addr);
         n = recvfrom(sock_fd, (char *)buffer, MAX_LINE, MSG_WAITALL,
                      (struct sockaddr *)&server_addr, &len);
     }
