@@ -8,12 +8,12 @@ There are two applications in the repository. These applications are as follows:
 
 C++ Programming Language;
 
-Framework: Qt5 (Version: Qt 5.11.3)
+- Framework: Qt5 (Version: Qt 5.11.3)
 
-IDE: Qt Creator 4.8.2
+- IDE: Qt Creator 4.8.2
 
 C# Programming Language;
 
-Framework: .NET Framework 4.6.1
+- Framework: .NET Framework 4.6.1
 
-IDE: Visual Studio 2019
+- IDE: Visual Studio 2019
